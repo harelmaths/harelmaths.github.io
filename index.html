@@ -6,300 +6,293 @@
   <title>Site de Mme Harel</title>
   <style>
     :root {
-      --ink: #111827;
-      --muted: #64748b;
-      --paper: #f5f7fb;
-      --night: #07111f;
-      --night2: #0b1b33;
-      --cyan: #6ee7ff;
-      --violet: #8b5cf6;
-      --blue: #3b82f6;
-      --gold: #f8d57e;
+      --ink:#0f172a;
+      --muted:#64748b;
+      --paper:#f6f9ff;
+      --cyan:#67e8f9;
+      --blue:#60a5fa;
+      --violet:#a78bfa;
+      --pink:#f0abfc;
+      --gold:#fde68a;
     }
 
-    * { box-sizing: border-box; }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
 
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--ink);
+    body{
+      margin:0;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--ink);
       background:
-        radial-gradient(circle at 10% 10%, rgba(59,130,246,.08), transparent 28%),
-        radial-gradient(circle at 90% 30%, rgba(139,92,246,.08), transparent 26%),
+        radial-gradient(circle at 15% 0%,rgba(96,165,250,.13),transparent 32%),
+        radial-gradient(circle at 90% 20%,rgba(167,139,250,.12),transparent 30%),
         var(--paper);
     }
 
-    .hero {
-      position: relative;
-      min-height: 440px;
-      overflow: hidden;
-      isolation: isolate;
-      color: white;
+    .hero{
+      position:relative;
+      min-height:455px;
+      overflow:hidden;
+      isolation:isolate;
+      color:white;
       background:
-        radial-gradient(circle at 20% 20%, rgba(110,231,255,.18), transparent 28%),
-        radial-gradient(circle at 82% 18%, rgba(139,92,246,.26), transparent 30%),
-        linear-gradient(135deg, var(--night) 0%, #0a1630 48%, var(--night2) 100%);
+        radial-gradient(circle at 18% 28%,rgba(103,232,249,.38),transparent 25%),
+        radial-gradient(circle at 78% 18%,rgba(167,139,250,.34),transparent 28%),
+        radial-gradient(circle at 72% 78%,rgba(96,165,250,.25),transparent 30%),
+        linear-gradient(135deg,#082f49 0%,#0b4f6c 32%,#123b75 65%,#312e81 100%);
     }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -3;
-      opacity: .26;
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:-4;
+      opacity:.22;
       background-image:
-        linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
-      background-size: 34px 34px;
-      mask-image: linear-gradient(to bottom, black 30%, transparent 96%);
+        linear-gradient(rgba(255,255,255,.12) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.12) 1px,transparent 1px);
+      background-size:34px 34px;
+      mask-image:linear-gradient(to bottom,black 25%,transparent 96%);
     }
 
-    .aurora {
-      position: absolute;
-      inset: -35% -10% auto;
-      height: 290px;
-      background: linear-gradient(90deg, rgba(110,231,255,.20), rgba(59,130,246,.08), rgba(139,92,246,.22));
-      filter: blur(70px);
-      transform: rotate(-6deg);
-      z-index: -2;
+    .hero::after{
+      content:"";
+      position:absolute;
+      width:760px;
+      height:360px;
+      left:8%;
+      top:-180px;
+      border-radius:50%;
+      background:linear-gradient(100deg,rgba(103,232,249,.34),rgba(96,165,250,.14),rgba(240,171,252,.28));
+      filter:blur(75px);
+      z-index:-3;
+      transform:rotate(-8deg);
     }
 
-    .orbit {
-      position: absolute;
-      width: 480px;
-      height: 480px;
-      border: 1px solid rgba(255,255,255,.14);
-      border-radius: 50%;
-      right: -130px;
-      top: -105px;
-      z-index: -1;
+    .math-bg{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      z-index:-1;
+      pointer-events:none;
+      opacity:.48;
     }
 
-    .orbit::before,
-    .orbit::after {
-      content: "";
-      position: absolute;
-      border: 1px solid rgba(110,231,255,.16);
-      border-radius: 50%;
-      inset: 54px;
+    .orbit{
+      position:absolute;
+      width:520px;
+      height:520px;
+      border:1px solid rgba(255,255,255,.22);
+      border-radius:50%;
+      right:-145px;
+      top:-125px;
+      z-index:-2;
+      box-shadow:0 0 80px rgba(103,232,249,.09);
     }
 
-    .orbit::after {
-      inset: 112px;
-      border-color: rgba(248,213,126,.20);
+    .orbit::before,.orbit::after{
+      content:"";
+      position:absolute;
+      border-radius:50%;
+      inset:60px;
+      border:1px solid rgba(103,232,249,.24);
     }
 
-    .formula {
-      position: absolute;
-      font-family: Georgia, "Times New Roman", serif;
-      color: rgba(255,255,255,.19);
-      user-select: none;
-      letter-spacing: .03em;
-      animation: drift 8s ease-in-out infinite;
+    .orbit::after{
+      inset:125px;
+      border-color:rgba(253,230,138,.28);
     }
 
-    .f1 { left: 5%; top: 14%; font-size: 1.4rem; }
-    .f2 { right: 11%; top: 16%; font-size: 1.1rem; animation-delay: -2s; }
-    .f3 { left: 8%; bottom: 15%; font-size: 1.1rem; animation-delay: -4s; }
-    .f4 { right: 22%; bottom: 12%; font-size: 1.25rem; animation-delay: -1s; }
-
-    @keyframes drift {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
+    .hero-inner{
+      width:min(1180px,calc(100% - 40px));
+      min-height:455px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:1.12fr .88fr;
+      align-items:center;
+      gap:48px;
+      padding:64px 0 80px;
     }
 
-    .hero-inner {
-      width: min(1180px, calc(100% - 40px));
-      min-height: 440px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      align-items: center;
-      gap: 48px;
-      padding: 66px 0 76px;
+    .hero-copy{position:relative;z-index:2}
+
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 14px;
+      border:1px solid rgba(255,255,255,.24);
+      border-radius:999px;
+      background:rgba(255,255,255,.12);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 8px 30px rgba(2,6,23,.12);
+      color:#f0f9ff;
+      font-size:.82rem;
+      font-weight:800;
+      letter-spacing:.11em;
+      text-transform:uppercase;
+      backdrop-filter:blur(10px);
     }
 
-    .hero-copy {
-      position: relative;
-      z-index: 2;
+    .dot{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--cyan);
+      box-shadow:0 0 20px var(--cyan);
     }
 
-    .kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 13px;
-      border: 1px solid rgba(255,255,255,.15);
-      border-radius: 999px;
-      background: rgba(255,255,255,.07);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
-      color: #dbeafe;
-      font-size: .82rem;
-      font-weight: 700;
-      letter-spacing: .10em;
-      text-transform: uppercase;
+    h1{
+      margin:23px 0 16px;
+      font-size:clamp(2.15rem,4.4vw,3.75rem);
+      line-height:1.02;
+      letter-spacing:-.045em;
+      font-weight:850;
+      text-shadow:0 8px 32px rgba(2,6,23,.22);
     }
 
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--cyan);
-      box-shadow: 0 0 18px var(--cyan);
+    .school{
+      margin-top:20px;
+      display:inline-flex;
+      align-items:center;
+      gap:12px;
+      color:#f8fbff;
+      font-size:clamp(1rem,1.7vw,1.2rem);
+      font-weight:700;
     }
 
-    h1 {
-      margin: 22px 0 12px;
-      font-size: clamp(2rem, 4.2vw, 3.6rem);
-      line-height: 1.02;
-      letter-spacing: -.04em;
-      font-weight: 800;
+    .school::before{
+      content:"";
+      width:38px;
+      height:2px;
+      border-radius:99px;
+      background:linear-gradient(90deg,var(--cyan),var(--pink));
+      box-shadow:0 0 14px rgba(103,232,249,.5);
     }
 
-    h1 .soft {
-      display: block;
-      margin-top: 8px;
-      font-size: .46em;
-      font-weight: 600;
-      letter-spacing: .01em;
-      color: #cbd5e1;
+    .place{
+      margin-top:7px;
+      color:#d8e6f5;
+      font-size:.96rem;
+      padding-left:50px;
     }
 
-    .school {
-      margin-top: 22px;
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      color: #eef6ff;
-      font-size: clamp(1rem, 1.7vw, 1.18rem);
-      font-weight: 600;
+    .visual{
+      position:relative;
+      height:310px;
+      display:grid;
+      place-items:center;
     }
 
-    .school::before {
-      content: "";
-      width: 36px;
-      height: 1px;
-      background: linear-gradient(90deg, var(--cyan), var(--violet));
+    .math-card{
+      position:relative;
+      width:min(370px,100%);
+      aspect-ratio:1.15;
+      border-radius:34px;
+      background:linear-gradient(145deg,rgba(255,255,255,.18),rgba(255,255,255,.06));
+      border:1px solid rgba(255,255,255,.26);
+      backdrop-filter:blur(18px);
+      box-shadow:0 34px 90px rgba(2,6,23,.33),inset 0 1px 0 rgba(255,255,255,.16),0 0 55px rgba(103,232,249,.10);
+      overflow:hidden;
+      transform:rotate(1.5deg);
     }
 
-    .place {
-      margin-top: 7px;
-      color: #94a3b8;
-      font-size: .95rem;
-      padding-left: 48px;
+    .math-card::before{
+      content:"";
+      position:absolute;
+      inset:-65px auto auto -60px;
+      width:210px;
+      height:210px;
+      border-radius:50%;
+      background:rgba(103,232,249,.18);
+      filter:blur(14px);
     }
 
-    .visual {
-      position: relative;
-      height: 300px;
-      display: grid;
-      place-items: center;
+    .math-svg{width:100%;height:100%;display:block}
+
+    .wave{position:absolute;left:0;right:0;bottom:-1px;height:58px}
+
+    main{
+      width:min(1080px,calc(100% - 40px));
+      margin:-18px auto 0;
+      position:relative;
+      z-index:3;
+      padding-bottom:70px;
     }
 
-    .math-card {
-      position: relative;
-      width: min(360px, 100%);
-      aspect-ratio: 1.15;
-      border-radius: 32px;
-      background: linear-gradient(145deg, rgba(255,255,255,.12), rgba(255,255,255,.045));
-      border: 1px solid rgba(255,255,255,.16);
-      backdrop-filter: blur(16px);
-      box-shadow: 0 30px 80px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.08);
-      overflow: hidden;
-      transform: rotate(2deg);
+    .welcome{
+      background:rgba(255,255,255,.96);
+      border:1px solid rgba(148,163,184,.18);
+      border-radius:24px;
+      padding:28px 30px;
+      box-shadow:0 20px 45px rgba(15,23,42,.09);
     }
 
-    .math-card::before {
-      content: "";
-      position: absolute;
-      inset: -60px auto auto -50px;
-      width: 190px;
-      height: 190px;
-      border-radius: 50%;
-      background: rgba(110,231,255,.12);
-      filter: blur(12px);
-    }
+    .welcome h2{margin:0 0 9px;font-size:1.35rem;letter-spacing:-.02em;color:#0f172a}
+    .welcome p{margin:0;line-height:1.72;color:var(--muted);font-size:1rem}
 
-    .math-svg {
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
-
-    .wave {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -1px;
-      height: 56px;
-    }
-
-    main {
-      width: min(1080px, calc(100% - 40px));
-      margin: -18px auto 0;
-      position: relative;
-      z-index: 3;
-      padding-bottom: 70px;
-    }
-
-    .welcome {
-      background: rgba(255,255,255,.94);
-      border: 1px solid rgba(148,163,184,.18);
-      border-radius: 24px;
-      padding: 28px 30px;
-      box-shadow: 0 20px 45px rgba(15,23,42,.09);
-    }
-
-    .welcome h2 {
-      margin: 0 0 9px;
-      font-size: 1.35rem;
-      letter-spacing: -.02em;
-      color: #0f172a;
-    }
-
-    .welcome p {
-      margin: 0;
-      line-height: 1.72;
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-    @media (max-width: 760px) {
-      .hero { min-height: 520px; }
-      .hero-inner {
-        min-height: 520px;
-        grid-template-columns: 1fr;
-        gap: 24px;
-        text-align: center;
-        padding: 54px 0 84px;
-      }
-      .school { justify-content: center; }
-      .place { padding-left: 0; }
-      .visual { height: 190px; }
-      .math-card { width: 250px; }
-      .f2, .f4 { display: none; }
-      .orbit { width: 360px; height: 360px; right: -180px; }
+    @media(max-width:760px){
+      .hero{min-height:530px}
+      .hero-inner{min-height:530px;grid-template-columns:1fr;gap:22px;text-align:center;padding:52px 0 86px}
+      .school{justify-content:center}
+      .place{padding-left:0}
+      .visual{height:190px}
+      .math-card{width:255px}
+      .orbit{width:370px;height:370px;right:-190px}
     }
   </style>
 </head>
 <body>
   <header class="hero">
-    <div class="aurora"></div>
     <div class="orbit"></div>
-    <div class="formula f1">πr²</div>
-    <div class="formula f2">a² + b² = c²</div>
-    <div class="formula f3">√2 · x + 7</div>
-    <div class="formula f4">f(x) = ax² + bx + c</div>
+
+    <svg class="math-bg" viewBox="0 0 1440 455" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="mathGlow" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#ffffff" stop-opacity=".72"/>
+          <stop offset="55%" stop-color="#a5f3fc" stop-opacity=".55"/>
+          <stop offset="100%" stop-color="#ddd6fe" stop-opacity=".5"/>
+        </linearGradient>
+        <filter id="softGlow"><feGaussianBlur stdDeviation="1.5"/></filter>
+      </defs>
+
+      <g fill="url(#mathGlow)" font-family="Georgia, serif">
+        <text x="45" y="75" font-size="26">πr²</text>
+        <text x="165" y="145" font-size="22">∫ f(x) dx</text>
+        <text x="350" y="82" font-size="24">a² + b² = c²</text>
+        <text x="560" y="150" font-size="23">√2</text>
+        <text x="710" y="72" font-size="22">Σ n²</text>
+        <text x="870" y="135" font-size="26">∞</text>
+        <text x="1010" y="78" font-size="21">Δ = b² − 4ac</text>
+        <text x="1190" y="160" font-size="23">f′(x)</text>
+        <text x="1320" y="92" font-size="24">φ</text>
+        <text x="75" y="300" font-size="22">cos²x + sin²x = 1</text>
+        <text x="325" y="372" font-size="24">x = (−b ± √Δ) / 2a</text>
+        <text x="680" y="330" font-size="23">P(A ∩ B)</text>
+        <text x="880" y="386" font-size="22">V = 4/3 πr³</text>
+        <text x="1120" y="318" font-size="22">y = mx + p</text>
+        <text x="1285" y="390" font-size="24">∑</text>
+      </g>
+
+      <g fill="none" stroke="#e0f2fe" stroke-opacity=".22" stroke-width="1.3">
+        <circle cx="235" cy="235" r="62"/>
+        <polygon points="235,173 292,272 178,272"/>
+        <path d="M470 270 C520 215,565 330,620 250 S720 195,760 245"/>
+        <path d="M1040 225 Q1115 150 1190 225 T1340 225"/>
+        <line x1="970" y1="250" x2="1370" y2="250"/>
+        <line x1="1170" y1="175" x2="1170" y2="330"/>
+      </g>
+
+      <g fill="#ffffff" opacity=".5" filter="url(#softGlow)">
+        <circle cx="145" cy="190" r="2.2"/><circle cx="415" cy="210" r="2"/><circle cx="650" cy="110" r="2.1"/>
+        <circle cx="805" cy="260" r="2.4"/><circle cx="990" cy="190" r="2"/><circle cx="1240" cy="230" r="2.2"/>
+      </g>
+    </svg>
 
     <div class="hero-inner">
       <div class="hero-copy">
         <div class="kicker"><span class="dot"></span> Mathématiques</div>
-        <h1>
-          Site de Mme Harel
-          <span class="soft">apprendre • comprendre • progresser</span>
-        </h1>
+        <h1>Site de Mme Harel</h1>
         <div class="school">Collège Albert Camus</div>
         <div class="place">La Norville</div>
       </div>
@@ -309,34 +302,35 @@
           <svg class="math-svg" viewBox="0 0 360 315" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#6ee7ff"/>
-                <stop offset="100%" stop-color="#8b5cf6"/>
+                <stop offset="0%" stop-color="#67e8f9"/>
+                <stop offset="50%" stop-color="#60a5fa"/>
+                <stop offset="100%" stop-color="#c084fc"/>
               </linearGradient>
-              <filter id="glow">
-                <feGaussianBlur stdDeviation="3" result="blur"/>
-                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-              </filter>
+              <filter id="glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
             </defs>
 
-            <g opacity=".18" stroke="#fff" stroke-width="1">
+            <g opacity=".24" stroke="#fff" stroke-width="1">
               <path d="M30 60H330M30 105H330M30 150H330M30 195H330M30 240H330"/>
               <path d="M75 30V285M120 30V285M165 30V285M210 30V285M255 30V285M300 30V285"/>
             </g>
 
             <g transform="translate(180 157)">
-              <circle r="95" fill="none" stroke="url(#g1)" stroke-width="2.4" opacity=".9"/>
-              <polygon points="0,-92 80,50 -80,50" fill="none" stroke="#f8d57e" stroke-width="2" opacity=".85"/>
-              <circle r="55" fill="none" stroke="#fff" stroke-opacity=".5" stroke-dasharray="4 7"/>
-              <path d="M-130 62 C-70 8,-28 86,20 25 S105 -7,135 -66" fill="none" stroke="#6ee7ff" stroke-width="3" filter="url(#glow)"/>
-              <line x1="-140" y1="0" x2="140" y2="0" stroke="#fff" stroke-opacity=".38"/>
-              <line x1="0" y1="-120" x2="0" y2="120" stroke="#fff" stroke-opacity=".38"/>
+              <circle r="95" fill="none" stroke="url(#g1)" stroke-width="2.8" opacity=".95"/>
+              <polygon points="0,-92 80,50 -80,50" fill="none" stroke="#fde68a" stroke-width="2.3" opacity=".95"/>
+              <circle r="55" fill="none" stroke="#fff" stroke-opacity=".62" stroke-dasharray="4 7"/>
+              <path d="M-130 62 C-70 8,-28 86,20 25 S105 -7,135 -66" fill="none" stroke="#67e8f9" stroke-width="3.5" filter="url(#glow)"/>
+              <line x1="-140" y1="0" x2="140" y2="0" stroke="#fff" stroke-opacity=".5"/>
+              <line x1="0" y1="-120" x2="0" y2="120" stroke="#fff" stroke-opacity=".5"/>
             </g>
 
-            <g fill="#fff" opacity=".82" font-family="Georgia, serif">
-              <text x="33" y="42" font-size="18">π</text>
-              <text x="291" y="58" font-size="16">√x</text>
-              <text x="300" y="278" font-size="18">∞</text>
-              <text x="40" y="276" font-size="15">Σ</text>
+            <g fill="#fff" opacity=".9" font-family="Georgia, serif">
+              <text x="28" y="43" font-size="18">π</text>
+              <text x="286" y="58" font-size="16">√x</text>
+              <text x="292" y="278" font-size="18">∞</text>
+              <text x="38" y="276" font-size="15">Σ</text>
+              <text x="150" y="37" font-size="15">∫</text>
+              <text x="274" y="183" font-size="14">Δ</text>
+              <text x="65" y="178" font-size="14">sin x</text>
             </g>
           </svg>
         </div>
@@ -344,16 +338,14 @@
     </div>
 
     <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
-      <path d="M0,45 C260,85 420,5 700,38 C980,72 1180,16 1440,42 L1440,80 L0,80 Z" fill="#f5f7fb"/>
+      <path d="M0,45 C260,85 420,5 700,38 C980,72 1180,16 1440,42 L1440,80 L0,80 Z" fill="#f6f9ff"/>
     </svg>
   </header>
 
   <main>
     <section class="welcome">
       <h2>Bienvenue</h2>
-      <p>
-        Retrouvez ici les ressources de mathématiques de Mme Harel : cours, exercices, méthodes et documents utiles pour les élèves du collège.
-      </p>
+      <p>Retrouvez ici les ressources de mathématiques de Mme Harel : cours, exercices, méthodes et documents utiles pour les élèves du collège.</p>
     </section>
   </main>
 </body>
