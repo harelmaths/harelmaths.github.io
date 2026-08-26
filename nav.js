@@ -30,6 +30,6 @@ document.addEventListener("DOMContentLoaded",function(){
     inner.querySelectorAll("a").forEach(function(link){link.addEventListener("click",closeMenu);});
     document.addEventListener("keydown",function(event){if(event.key==="Escape")closeMenu();});
     document.addEventListener("click",function(event){if(nav.classList.contains("menu-open")&&!nav.contains(event.target))closeMenu();});
-    window.addEventListener("resize",function(){if(window.innerWidth>900)closeMenu();});
+    window.addEventListener("resize",function(){if(window.innerWidth>1024)closeMenu();});
   });
 });
