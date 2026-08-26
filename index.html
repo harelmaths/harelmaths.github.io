@@ -32,7 +32,6 @@ h1{margin:16px 0 8px;font-size:clamp(2.05rem,4vw,3.35rem);line-height:1;letter-s
 .glass:before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;left:-55px;top:-55px;background:rgba(103,232,249,.18);filter:blur(15px)}
 .glass:after{content:"";position:absolute;width:140px;height:140px;border-radius:50%;right:-35px;bottom:-40px;background:rgba(240,171,252,.16);filter:blur(18px)}
 .glass svg{width:100%;height:100%;display:block}.spark{position:absolute;width:5px;height:5px;border-radius:50%;background:#fff;box-shadow:0 0 14px #fff}.s1{left:16%;top:15%}.s2{right:18%;top:23%}.s3{left:28%;bottom:14%}.s4{right:25%;bottom:20%}
-
 .navbar{position:sticky;top:0;z-index:30;background:rgba(4,13,33,.97);border-top:1px solid rgba(91,171,255,.35);border-bottom:1px solid rgba(255,255,255,.06);box-shadow:0 7px 18px rgba(2,6,23,.12);backdrop-filter:blur(12px)}
 .nav-inner{display:flex;align-items:center;gap:5px;overflow-x:auto;overflow-y:hidden;white-space:nowrap;width:min(1380px,100%);margin:auto;padding:12px 14px;scrollbar-width:thin;scrollbar-color:rgba(103,232,249,.38) transparent;-webkit-overflow-scrolling:touch}
 .nav-inner::-webkit-scrollbar{height:6px}.nav-inner::-webkit-scrollbar-thumb{background:rgba(103,232,249,.34);border-radius:99px}
@@ -42,7 +41,6 @@ h1{margin:16px 0 8px;font-size:clamp(2.05rem,4vw,3.35rem);line-height:1;letter-s
 .nav-menu{position:relative;flex:0 0 auto}.nav-menu summary:after{content:"▾";font-size:.7rem;margin-left:7px;opacity:.75}
 .nav-drop{position:fixed;z-index:50;min-width:180px;padding:7px;background:#08162c;border:1px solid rgba(129,140,248,.28);border-radius:12px;box-shadow:0 16px 35px rgba(2,6,23,.32);transform:translateY(7px)}
 .nav-drop a{display:block;padding:9px 11px;border-radius:8px;color:#cbd5e1;text-decoration:none;font-size:.9rem}.nav-drop a:hover{background:rgba(99,102,241,.17);color:#fff}
-
 main{width:min(1120px,calc(100% - 40px));margin:34px auto 0;padding-bottom:70px}
 .welcome,.resources{background:rgba(255,255,255,.96);border:1px solid rgba(148,163,184,.18);border-radius:22px;box-shadow:0 18px 40px rgba(15,23,42,.08)}
 .welcome{padding:24px 28px}.welcome h2,.resources h2{margin:0 0 8px}.welcome h2{font-size:1.28rem}.welcome p{margin:0;line-height:1.67;color:var(--muted)}
@@ -50,15 +48,14 @@ main{width:min(1120px,calc(100% - 40px));margin:34px auto 0;padding-bottom:70px}
 .resource-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .resource-card{display:flex;flex-direction:column;overflow:hidden;min-width:0;border-radius:20px;text-decoration:none;color:var(--ink);background:#fff;border:1px solid rgba(148,163,184,.2);box-shadow:0 12px 30px rgba(15,23,42,.08);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
 .resource-card:hover{transform:translateY(-5px);box-shadow:0 20px 42px rgba(15,23,42,.13);border-color:rgba(96,165,250,.38)}
-.thumb{position:relative;height:150px;overflow:hidden;padding:18px;display:flex;align-items:flex-end;background:var(--bg)}
-.thumb:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 25%,rgba(255,255,255,.28),transparent 23%),linear-gradient(135deg,rgba(255,255,255,.08),transparent 50%)}
-.thumb:after{content:"";position:absolute;width:120px;height:120px;border:1px solid rgba(255,255,255,.28);border-radius:50%;right:-30px;top:-28px;box-shadow:0 0 0 28px rgba(255,255,255,.05)}
-.thumb-mark{position:relative;z-index:2;width:58px;height:58px;border-radius:17px;display:grid;place-items:center;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);backdrop-filter:blur(10px);color:#fff;font-weight:900;font-size:1.2rem;letter-spacing:-.03em;box-shadow:0 12px 28px rgba(0,0,0,.12)}
-.thumb-name{position:relative;z-index:2;margin-left:12px;color:#fff;font-size:1rem;font-weight:800;text-shadow:0 2px 10px rgba(0,0,0,.18)}
+.thumb{position:relative;height:150px;overflow:hidden;padding:18px;display:flex;align-items:flex-end;background:var(--bg);background-position:center;background-size:cover}
+.thumb:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(2,6,23,.5),rgba(2,6,23,.04) 62%)}
+.thumb:after{content:"";position:absolute;width:120px;height:120px;border:1px solid rgba(255,255,255,.22);border-radius:50%;right:-30px;top:-28px;box-shadow:0 0 0 28px rgba(255,255,255,.035)}
+.thumb-mark{position:relative;z-index:2;width:52px;height:52px;border-radius:15px;display:grid;place-items:center;background:rgba(8,15,35,.3);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(10px);color:#fff;font-weight:900;font-size:1.08rem;letter-spacing:-.03em;box-shadow:0 12px 28px rgba(0,0,0,.12)}
+.thumb-name{position:relative;z-index:2;margin-left:12px;color:#fff;font-size:1rem;font-weight:800;text-shadow:0 2px 10px rgba(0,0,0,.3)}
 .resource-body{padding:16px 17px 18px;display:flex;flex-direction:column;gap:7px;min-height:122px}
 .resource-title{font-weight:850;font-size:1.02rem;line-height:1.25}.resource-site{font-size:.84rem;color:#64748b;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.resource-action{margin-top:auto;padding-top:5px;font-size:.88rem;font-weight:750;color:#2563eb}
-.r1{--bg:linear-gradient(135deg,#7c3aed,#2563eb)}.r2{--bg:linear-gradient(135deg,#0ea5e9,#2563eb)}.r3{--bg:linear-gradient(135deg,#f97316,#ef4444)}.r4{--bg:linear-gradient(135deg,#dc2626,#7f1d1d)}.r5{--bg:linear-gradient(135deg,#ef4444,#be123c)}.r6{--bg:linear-gradient(135deg,#10b981,#047857)}.r7{--bg:linear-gradient(135deg,#8b5cf6,#4338ca)}
-
+.r1{--bg:url('assets/thumbs/devoirs.svg') center/cover no-repeat}.r2{--bg:url('assets/thumbs/mathenpoche.svg') center/cover no-repeat}.r3{--bg:url('assets/thumbs/diabolomaths.svg') center/cover no-repeat}.r4{--bg:url('assets/thumbs/hedacademy.svg') center/cover no-repeat}.r5{--bg:url('assets/thumbs/yvan-monka.svg') center/cover no-repeat}.r6{--bg:url('assets/thumbs/mathsmentales.svg') center/cover no-repeat}.r7{--bg:url('assets/thumbs/instruments.svg') center/cover no-repeat}
 @media(max-width:1050px){.hero-inner{grid-template-columns:minmax(0,1fr) 300px;gap:20px}.nav-link,.nav-menu summary{font-size:.88rem;padding:9px 11px}}
 @media(max-width:900px){.resource-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:800px){.hero{min-height:430px}.hero-inner{min-height:430px;grid-template-columns:1fr;gap:8px;text-align:center;padding:28px 0 22px}.school{justify-content:center}.school:before{display:none}.place{padding-left:0}.visual{height:155px}.glass{width:215px}.math-layer{opacity:.48}.nav-inner{padding:10px 12px}.nav-link,.nav-menu summary{font-size:.88rem;padding:9px 11px}}
@@ -80,7 +77,6 @@ main{width:min(1120px,calc(100% - 40px));margin:34px auto 0;padding-bottom:70px}
 </div></div>
 </div>
 </header>
-
 <nav class="navbar"><div class="nav-inner">
 <a class="nav-link active" href="#ressources-654">6ème / 5ème / 4ème</a>
 <a class="nav-link" href="#">3e / DNB</a>
@@ -92,53 +88,42 @@ main{width:min(1120px,calc(100% - 40px));margin:34px auto 0;padding-bottom:70px}
 <a class="nav-link" href="#">Pour le lycée</a>
 <a class="nav-link" href="#">Contact</a>
 </div></nav>
-
 <main>
 <section class="welcome"><h2>Bienvenue</h2><p>Retrouvez ici les ressources de mathématiques de Mme Harel : cours, exercices, méthodes et documents utiles pour les élèves du collège.</p></section>
-
 <section class="resources" id="ressources-654">
 <div class="resources-head"><h2>6ème / 5ème / 4ème</h2><p>Des sites sélectionnés pour s'entraîner, revoir le cours et progresser en mathématiques.</p></div>
 <div class="resource-grid">
-
 <a class="resource-card r1" href="https://anabelledesgardin.wixsite.com/maths/3eme" target="_blank" rel="noopener">
 <div class="thumb"><div class="thumb-mark">AD</div><div class="thumb-name">Maths & corrections</div></div>
 <div class="resource-body"><div class="resource-title">Devoirs et interrogations corrigés</div><div class="resource-site">anabelledesgardin.wixsite.com</div><div class="resource-action">Ouvrir le site ↗</div></div>
 </a>
-
 <a class="resource-card r2" href="https://mathenpoche.sesamath.net/" target="_blank" rel="noopener">
 <div class="thumb"><div class="thumb-mark">M</div><div class="thumb-name">Mathenpoche</div></div>
 <div class="resource-body"><div class="resource-title">Cours et exercices</div><div class="resource-site">mathenpoche.sesamath.net</div><div class="resource-action">Ouvrir le site ↗</div></div>
 </a>
-
 <a class="resource-card r3" href="https://diabolomaths.fr/" target="_blank" rel="noopener">
 <div class="thumb"><div class="thumb-mark">D</div><div class="thumb-name">Diabolomaths</div></div>
 <div class="resource-body"><div class="resource-title">Cours et exercices de maths</div><div class="resource-site">diabolomaths.fr</div><div class="resource-action">Ouvrir le site ↗</div></div>
 </a>
-
 <a class="resource-card r4" href="https://www.youtube.com/channel/UC8SRYHgGMqAYZehYdznaqvQ" target="_blank" rel="noopener">
 <div class="thumb"><div class="thumb-mark">▶</div><div class="thumb-name">Hedacademy</div></div>
 <div class="resource-body"><div class="resource-title">Vidéos de mathématiques</div><div class="resource-site">YouTube</div><div class="resource-action">Voir les vidéos ↗</div></div>
 </a>
-
 <a class="resource-card r5" href="https://www.youtube.com/channel/UCaDqmzanCq4ZYhdEm0Df9Qg" target="_blank" rel="noopener">
 <div class="thumb"><div class="thumb-mark">YM</div><div class="thumb-name">Yvan Monka</div></div>
 <div class="resource-body"><div class="resource-title">Cours de maths en vidéo</div><div class="resource-site">YouTube</div><div class="resource-action">Voir les vidéos ↗</div></div>
 </a>
-
 <a class="resource-card r6" href="https://mathsmentales.net/" target="_blank" rel="noopener">
 <div class="thumb"><div class="thumb-mark">×</div><div class="thumb-name">MathsMentales</div></div>
 <div class="resource-body"><div class="resource-title">Calcul mental</div><div class="resource-site">mathsmentales.net</div><div class="resource-action">S'entraîner ↗</div></div>
 </a>
-
 <a class="resource-card r7" href="https://padlet.com/padfse/vid-os-de-maths-si3xxl2xj77cey24" target="_blank" rel="noopener">
 <div class="thumb"><div class="thumb-mark">∠</div><div class="thumb-name">Vidéos pratiques</div></div>
 <div class="resource-body"><div class="resource-title">Règle, équerre et rapporteur</div><div class="resource-site">Ressources vidéo</div><div class="resource-action">Voir les vidéos ↗</div></div>
 </a>
-
 </div>
 </section>
 </main>
-
 <script>
 document.addEventListener('toggle',e=>{if(e.target.matches('.nav-menu')&&e.target.open){const r=e.target.querySelector('summary').getBoundingClientRect(),d=e.target.querySelector('.nav-drop');d.style.left=Math.min(r.left,window.innerWidth-190)+'px';d.style.top=(r.bottom+4)+'px';}},true);
 </script>
